@@ -1,0 +1,27 @@
+Gardening
+#include <stdio.h>
+
+int main() {
+    int rows, cols, treeNum;
+    scanf("%d %d %d", &rows, &cols, &treeNum);
+
+  
+    int isMango = 0;
+
+    for (int i = 0; i < rows; i++) {
+        int treeInSecondCol = 2 + i * cols;             
+        int treeInSecondLastCol = (cols - 1) + i * cols; 
+
+        if (treeNum == treeInSecondCol || treeNum == treeInSecondLastCol) {
+            isMango = 1;
+            break;
+        }
+    }
+
+    if (isMango)
+        printf("It is a mango tree\n");
+    else
+        printf("It is not a mango tree\n");
+
+    return 0;
+}
