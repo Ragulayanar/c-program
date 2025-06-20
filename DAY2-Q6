@@ -1,0 +1,30 @@
+Greatest of Three Numbers
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3;
+
+    
+    scanf("%f", &num1);
+    scanf("%f", &num2);
+    scanf("%f", &num3);
+
+   
+    float max = num1;
+    int maxPos = 1;
+
+    if (num2 >= max) {
+        max = num2;
+        maxPos = 2;
+    }
+
+    if (num3 >= max) {
+        max = num3;
+        maxPos = 3;
+    }
+
+    
+    printf("Number%d is maximum with value of %.1f\n", maxPos, max);
+
+    return 0;
+}
