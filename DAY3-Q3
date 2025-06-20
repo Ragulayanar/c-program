@@ -1,0 +1,29 @@
+Second minimum element in an array
+#include <stdio.h>
+#include <limits.h>  // For INT_MAX
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int min = INT_MAX;
+    int secondMin = INT_MAX;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < min) {
+            secondMin = min;
+            min = arr[i];
+        } else if (arr[i] < secondMin && arr[i] != min) {
+            secondMin = arr[i];
+        }
+    }
+
+    printf("%d\n", secondMin);
+
+    return 0;
+}
